@@ -1,0 +1,100 @@
+@import url('(https://fonts.google.com/specimen/Nunito+Sans)');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    --bgColor: hsl(0, 0%, 98%);
+    --fontColor: hsl(207, 26%, 17%);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.heading,
+.search-bar {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.toggle {
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.toggle i {
+    padding-right: 5px;
+}
+
+button {
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+.from-control {
+    width: 400px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.from-control input {
+    width: 100%;
+    padding: 17px 14px;
+    outline: 0;
+    border: 0;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.from-control i {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.region-dropdown {
+    width: 200px;
+    position: relative;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 17px 14px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dropdown p {
+    letter-spacing: 0.5px;
+}
+
+.drop {
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    top: 4rem;
+    padding: 14px 14px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.drop p {
+    padding: 5px 0;
+}
