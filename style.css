@@ -14,12 +14,25 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+.dark {
+    --bgColor: hsl(0, 0%, .98%);
+    --fontColor: hsl(0, 0%, 100%);
+    --countryBg: hsl(207, 26%, 17%);
+    background: var(--bgColor);
+    color: var(--fontColor) !important;
+
+}
+
 .heading,
 .search-bar {
     width: 100%;
     padding: 30px;
     display: flex;
     justify-content: space-between;
+}
+
+.show-Searchbar {
+    display: none;
 }
 
 .heading {
@@ -29,7 +42,7 @@ body {
 .toggle {
     font-size: 18px;
     cursor: pointer;
-
+    color: var(--fontColor);
 }
 
 .toggle i {
@@ -40,6 +53,7 @@ button {
     outline: none;
     border: 0;
     background: transparent;
+    color: var(--fontColor);
 }
 
 .from-control {
@@ -48,6 +62,7 @@ button {
     position: relative;
     border-radius: 5px;
     overflow: hidden;
+
 }
 
 .from-control input {
@@ -64,6 +79,7 @@ button {
     top: 1.2rem;
     right: 1rem;
     cursor: pointer;
+    color: var(--countryBg)
 }
 
 .region-dropdown {
@@ -84,6 +100,7 @@ button {
 
 .dropdown p {
     letter-spacing: 0.5px;
+
 }
 
 .drop {
@@ -93,8 +110,44 @@ button {
     padding: 14px 14px;
     width: 100%;
     border-radius: 5px;
+    background-color: var(--bgColor);
 }
 
 .drop p {
     padding: 5px 0;
+    cursor: pointer;
+}
+
+.countryes {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+
+.country {
+    min-height: 350px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    height: 25px;
+    width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--countryBg);
+}
+
+
+.country .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.country-details {
+    padding: 20px 20px;
+}
+
+.country-details h5 {
+    font-size: 20px;
+    padding: 8px 0;
+    letter-spacing: 1px;
 }
