@@ -15,9 +15,11 @@ body {
 }
 
 .dark {
-    --bgColor: hsl(0, 0%, .98%);
+    --darkBlue: hsl(209, 23%, 22%);
+    --bgColor: hsl(207, 26%, 17%);
     --fontColor: hsl(0, 0%, 100%);
-    --countryBg: hsl(207, 26%, 17%);
+    --veryDarkBlue: hsl(200, 15%, 8%);
+    --countryBg: hsl(209, 23%, 22%);
     background: var(--bgColor);
     color: var(--fontColor) !important;
 
@@ -29,6 +31,7 @@ body {
     padding: 30px;
     display: flex;
     justify-content: space-between;
+
 }
 
 .show-Searchbar {
@@ -37,6 +40,7 @@ body {
 
 .heading {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: var(--darkBlue)
 }
 
 .toggle {
@@ -54,6 +58,7 @@ button {
     border: 0;
     background: transparent;
     color: var(--fontColor);
+    background: var(--countryBg);
 }
 
 .from-control {
@@ -62,7 +67,7 @@ button {
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-
+    background: var(--countryBg);
 }
 
 .from-control input {
@@ -85,6 +90,7 @@ button {
 .region-dropdown {
     width: 200px;
     position: relative;
+    background: var(--countryBg);
 }
 
 .dropdown {
@@ -96,6 +102,7 @@ button {
     justify-content: space-between;
     cursor: pointer;
     font-size: 15px;
+
 }
 
 .dropdown p {
@@ -110,7 +117,7 @@ button {
     padding: 14px 14px;
     width: 100%;
     border-radius: 5px;
-    background-color: var(--bgColor);
+    background: var(--countryBg);
 }
 
 .drop p {
@@ -150,4 +157,77 @@ button {
     font-size: 20px;
     padding: 8px 0;
     letter-spacing: 1px;
+}
+
+.modal-country-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-country-img {
+    width: 40%;
+}
+
+/* .modal-country-details {
+    /* justify-content: space-around; 
+} */
+
+.modal-country-img img {
+    width: 90%;
+    height: 300px;
+}
+
+.modeal-country-details-left {
+    padding-right: 50px;
+}
+
+.modeal-country-details-left h1 {
+    margin-bottom: 30px;
+}
+
+.modeal-country-details-left p {
+    margin-bottom: 20px;
+}
+
+.modeal-country-details-right {
+    padding-left: 50px;
+}
+
+.modeal-country-details-right p {
+    margin-bottom: 20px;
+}
+
+.container.active {
+    filter: blur(5px) brightness(0.7)
+}
+
+.modal-country {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 500px;
+    background: hsl(209, 23%, 22%);
+    padding: 5rem;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.close-icon {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    cursor: pointer;
+}
+
+.close-icon i:hover {
+    color: crimson;
+}
+
+.active.modal-country {
+    visibility: hidden;
 }

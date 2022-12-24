@@ -5,7 +5,12 @@ const searchEl = document.getElementById('search-input')
 const countryName = document.getElementsByClassName('countryName')
 const regionName = document.getElementsByClassName('regionName');
 const toggleEl = document.querySelector('.toggle');
-const moonEl = document.querySelector('.moon')
+const moonEl = document.querySelector('.moon');
+let countryesEl = document.querySelector(".countryes");
+const containerEl = document.querySelector('.container');
+const countryModel = document.querySelector('.modal-country');
+const closeIcon = document.querySelector('.close-icon')
+
 
 async function getCountry() {
     const url = await fetch('https://restcountries.com/v2/all')
@@ -15,10 +20,10 @@ async function getCountry() {
 }
 
 function showCuntry(data) {
-    let countryesEl = document.querySelector(".countryes");
+
     const countryEl = document.createElement('div');
     countryEl.classList.add('country');
-    // console.log(data)
+    //console.log(data)
     countryEl.innerHTML = `
     <div class="country">
     <div class="img">
@@ -33,10 +38,46 @@ function showCuntry(data) {
 </div>
     `
     countryesEl.appendChild(countryEl)
+
+    countryEl.addEventListener('click', () => {
+        // event.preventDefault()
+
+        countryModel.innerHTML = `
+        <div class="close-icon">
+        <i class="fas fa-times fa-2x"></i>
+    </div>
+    <div class="modal-country-details">
+       <div class="modal-country-img">
+           <img src="${data.flag}" alt="">
+       </div>
+       <div class="modal-country-details">
+           <div class="modeal-country-details-left">
+               <h1>${data.name}</h1>
+               <p><strong>Native Name : </strong>${data.nativeName}</p>
+               <p class="regionName"><strong>Population: </strong> ${data.region}</p>
+               <p class="regionName"><strong> Region: </strong> ${data.region}</p>
+               <p class="regionName"><strong>Sub Region: </strong> ${data.region}</p>
+               <p><strong>Capital: </strong>${data.capital} </p>
+           </div>
+           <div class="modeal-country-details-right">
+               <p><strong>Top Lavel Domain : </strong>${data.demonym}</p>
+               <p class="regionName"><strong>Currencies: </strong> ${data.region}</p>
+               <p><strong>Capital: </strong>${data.capital} </p>
+           </div>
+       </div>
+    </div>`
+        containerEl.classList.add('active');
+
+        countryModel.classList.remove('active')
+
+
+    });
+
 }
 
 
 getCountry()
+
 
 dropdownEl.addEventListener('click', () => {
     dropEl.classList.toggle('show-Searchbar')
@@ -73,3 +114,12 @@ toggleEl.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     moonEl.classList.toggle('fas')
 });
+
+
+
+closeIcon.addEventListener('click', () => {
+    console.log('closebutter')
+    containerEl.classList.remove('active');
+    countryModel.classList.add('active')
+
+})
