@@ -9,21 +9,27 @@ const moonEl = document.querySelector('.moon');
 let countryesEl = document.querySelector(".countryes");
 const containerEl = document.querySelector('.container');
 const countryModel = document.querySelector('.modal-country');
-const closeIcon = document.querySelector('.close-icon')
+//const closeIcon = document.querySelector('.close-icon')
 
-
+//fetch data
 async function getCountry() {
+    const troggleSpnir = displaySpnir => {
+        document.getElementById('spnir').style.display = displaySpnir;
+    }
+    troggleSpnir('block')
     const url = await fetch('https://restcountries.com/v2/all')
     const res = await url.json();
     res.forEach((elm) => showCuntry(elm))
+    troggleSpnir('none')
 
 }
 
+// ==== show data function ======
 function showCuntry(data) {
 
     const countryEl = document.createElement('div');
     countryEl.classList.add('country');
-    //console.log(data)
+    // console.log(data)
     countryEl.innerHTML = `
     <div class="country">
     <div class="img">
@@ -39,13 +45,16 @@ function showCuntry(data) {
     `
     countryesEl.appendChild(countryEl)
 
+
+    // ===== country model popup ========
+
     countryEl.addEventListener('click', () => {
         // event.preventDefault()
 
         countryModel.innerHTML = `
-        <div class="close-icon">
-        <i class="fas fa-times fa-2x"></i>
-    </div>
+        <div class="close-icon" >
+            <i class="fas fa-times fa-2x" onclick=' closeIcon()'></i>
+        </div>
     <div class="modal-country-details">
        <div class="modal-country-img">
            <img src="${data.flag}" alt="">
@@ -54,17 +63,18 @@ function showCuntry(data) {
            <div class="modeal-country-details-left">
                <h1>${data.name}</h1>
                <p><strong>Native Name : </strong>${data.nativeName}</p>
-               <p class="regionName"><strong>Population: </strong> ${data.region}</p>
+               <p class="regionName"><strong>Population: </strong> ${data.population}</p>
                <p class="regionName"><strong> Region: </strong> ${data.region}</p>
-               <p class="regionName"><strong>Sub Region: </strong> ${data.region}</p>
+               <p class="regionName"><strong>Sub Region: </strong> ${data.subregion}</p>
                <p><strong>Capital: </strong>${data.capital} </p>
            </div>
            <div class="modeal-country-details-right">
                <p><strong>Top Lavel Domain : </strong>${data.demonym}</p>
-               <p class="regionName"><strong>Currencies: </strong> ${data.region}</p>
-               <p><strong>Capital: </strong>${data.capital} </p>
+               <p class="regionName"><strong>Currencies: </strong> ${data.currencies.map(c => c.name)}</p>
+               <p><strong>Languages: </strong>${data.languages.map(l => l.name)} </p>
            </div>
        </div>
+       
     </div>`
         containerEl.classList.add('active');
 
@@ -117,9 +127,15 @@ toggleEl.addEventListener('click', () => {
 
 
 
-closeIcon.addEventListener('click', () => {
-    console.log('closebutter')
+// closeIcon.addEventListener('click', () => {
+//     console.log('closebutten')
+//     containerEl.classList.remove('active');
+//     countryModel.classList.add('active')
+
+// })
+
+function closeIcon() {
     containerEl.classList.remove('active');
     countryModel.classList.add('active')
+}
 
-})

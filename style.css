@@ -142,11 +142,17 @@ button {
     background: var(--countryBg);
 }
 
+.img {
+    width: 100%;
+    height: 50%;
+}
 
 .country .img img {
-    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    object-fit: cover;
+    height: 100%;
 }
 
 .country-details {
@@ -168,10 +174,6 @@ button {
 .modal-country-img {
     width: 40%;
 }
-
-/* .modal-country-details {
-    /* justify-content: space-around; 
-} */
 
 .modal-country-img img {
     width: 90%;
@@ -230,4 +232,8 @@ button {
 
 .active.modal-country {
     visibility: hidden;
+}
+
+#spnir {
+    display: none;
 }
