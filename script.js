@@ -9,18 +9,25 @@ const moonEl = document.querySelector('.moon');
 let countryesEl = document.querySelector(".countryes");
 const containerEl = document.querySelector('.container');
 const countryModel = document.querySelector('.modal-country');
+//const countryEl = document.querySelector('.country')
 //const closeIcon = document.querySelector('.close-icon')
 
 //fetch data
 async function getCountry() {
-    const troggleSpnir = displaySpnir => {
-        document.getElementById('spnir').style.display = displaySpnir;
-    }
-    troggleSpnir('block')
+
+    //==== add loding function
+    //countryEl.classList.add('loding')
+    // const troggleSpnir = displaySpnir => {
+    //     document.getElementById('spnir').style.display = displaySpnir;
+    // }
+    //troggleSpnir('block')
+
     const url = await fetch('https://restcountries.com/v2/all')
     const res = await url.json();
     res.forEach((elm) => showCuntry(elm))
-    troggleSpnir('none')
+
+    //countryEl.classList.remove('loding')
+    // troggleSpnir('none')
 
 }
 
@@ -31,7 +38,7 @@ function showCuntry(data) {
     countryEl.classList.add('country');
     // console.log(data)
     countryEl.innerHTML = `
-    <div class="country">
+    <div class="country ">
     <div class="img">
         <img src="${data.flag}" alt="">
     </div>

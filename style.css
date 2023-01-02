@@ -237,3 +237,65 @@ button {
 #spnir {
     display: none;
 }
+
+
+/* * css for responsive */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .heading {
+        padding: 10px;
+        /* font-size: .8rem; */
+        width: 410px
+    }
+
+    .heading h1 {
+        font-size: 20px;
+    }
+
+    .toggle {
+        font-size: 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+        padding: 15px;
+        display: block;
+        justify-content: space-between;
+    }
+
+    .region-dropdown {
+        width: 100%;
+
+        margin-top: 10px;
+    }
+
+    .modal-country-details {
+        display: block;
+    }
+
+    .modal-country-img img {
+        width: 150px;
+        height: 150px;
+
+    }
+
+    .modeal-country-details-left h1 {
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
+
+    .modeal-country-details-left h1 {
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
+
+    .modal-country {
+        height: 600px;
+        overflow: scroll;
+        padding: 1rem 2rem
+    }
+
+    .modeal-country-details-right {
+        padding-left: 0;
+    }
+}

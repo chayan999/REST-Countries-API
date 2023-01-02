@@ -1,0 +1,74 @@
+.countryes {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+
+.country {
+    min-height: 350px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* height: 100px; */
+    width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--countryBg);
+}
+
+.img {
+    width: 100%;
+    height: 50%;
+}
+
+.country .img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.country-details {
+    padding: 0 20px;
+}
+
+.country-details h5 {
+    font-size: 20px;
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+
+/* css for loding */
+
+.loding .img,
+.loding h5,
+.loding p {
+    position: relative;
+}
+
+.loding h5 ::after,
+.loding .img::after,
+.loding p::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(130deg, #434343 50%, #4f4c4c 60%, #4f4c4c 61%, #434343 70%);
+    border-radius: 5px;
+    background-size: 200%;
+    background-position: 100% 0;
+    animation: weve 0.9s linear infinite;
+
+}
+
+.loding h5 ::after {
+    width: 50%;
+}
+
+@keyframes weve {
+    100% {
+        background-position: -100%;
+    }
+}
