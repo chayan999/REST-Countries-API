@@ -242,6 +242,8 @@ button {
 /* * css for responsive */
 
 @media (min-width: 320px) and (max-width: 480px) {
+
+
     .heading {
         padding: 10px;
         /* font-size: .8rem; */
@@ -261,6 +263,10 @@ button {
         padding: 15px;
         display: block;
         justify-content: space-between;
+    }
+
+    .from-control {
+        width: 380px;
     }
 
     .region-dropdown {
